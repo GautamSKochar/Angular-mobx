@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.chk-box {
+    padding-right: 10px;
+}
+
+.selected-framework {
+    background: #315a6f;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .remove-framework {
+    cursor: pointer;
+  }
+  

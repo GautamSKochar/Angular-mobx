@@ -1,0 +1,26 @@
+<h4>Example Todo List</h4>
+
+<app-selected-frameworks></app-selected-frameworks>
+
+<div class="parent-container" *mobxAutorun>
+
+  <mat-form-field>
+      <input matInput placeholder="filter frameworks" name="filter" [(ngModel)]="frameworks.filter">
+  </mat-form-field>
+    
+  <app-change-detection-counter></app-change-detection-counter>
+  <div class="container">
+    <mat-checkbox class="chk-box" 
+                  [(ngModel)]="frameworks.isAllChecked" 
+                  [disabled]="!frameworks.filteredItems.length" 
+                  [indeterminate]="!frameworks.filteredItems.length">
+    </mat-checkbox>
+    {{ frameworks.isAllChecked === true ? 'Uncheck All' : 'Check All' }}
+  </div>
+
+  <div class="container" *ngFor="let item of frameworks.filteredItems">
+    <mat-checkbox class="chk-box" [(ngModel)]="item.checked"></mat-checkbox>
+    {{ item.name }}
+  </div>
+</div>
+<app-new-framework></app-new-framework>
